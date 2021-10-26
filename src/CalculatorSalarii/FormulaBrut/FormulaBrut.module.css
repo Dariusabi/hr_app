@@ -1,0 +1,12 @@
+/* .tableBrut {
+    margin: auto;
+} */
+
+td {
+    padding: 3px;
+    text-align: left;
+}
+
+.brut {
+    width: 30em;
+}
