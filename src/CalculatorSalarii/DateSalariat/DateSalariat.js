@@ -17,7 +17,7 @@ function DateSalariat(props) {
                         id="brut"
                         defaultChecked
                     />
-                    <label htmlFor="brut">Salariu Brut</label>
+                    <label htmlFor="brut">Gross salary</label>
                 </div>
 
                 <div>
@@ -28,18 +28,18 @@ function DateSalariat(props) {
                         onChange={props.onChange}
                         id="net"
                     />
-                    <label htmlFor="net">Salariu Net</label>
+                    <label htmlFor="net">Net salary</label>
                 </div>
 
                 <br />
 
                 <div>
-                    <label>Salariu</label>
+                    <label>Salary</label>
                     <input type="number" value={props.val} onChange={props.changeSalary} />
                 </div>
                 <br />
                 <div>
-                    <label>Scutit impozit</label>
+                    <label>No Tax</label>
                     <input type="checkbox" onChange={props.onSkip} />
                 </div>
             </form>

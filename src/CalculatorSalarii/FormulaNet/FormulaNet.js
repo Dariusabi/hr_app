@@ -8,12 +8,12 @@ function FormulaNet(props) {
             <table>
                 <thead>
                     <tr>
-                        <th>Calculator Salariu</th>
+                        <th>Salary Calculator</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Salariu Brut </td>
+                        <td>Gross Salary </td>
                         <td> {props.salariuBrut} </td>
                     </tr>
                 </tbody>

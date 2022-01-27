@@ -9,27 +9,27 @@ const Result = (props) => {
             <table>
                 <thead>
                     <tr>
-                        <th>Ani vechime</th>
-                        <th>Nume</th>
-                        <th>Salariu</th>
-                        <th>Functie</th>
-                        <th>Echipa</th>
-                        <th>Telefon</th>
+                        <th>Age</th>
+                        <th>Name</th>
+                        <th>Salary</th>
+                        <th>Position</th>
+                        <th>Team</th>
+                        <th>Phone</th>
                         <th>Email</th>
-                        <th>Scutit de impozit</th>
+                        <th>No tax</th>
                     </tr>
                 </thead>
                 <tbody>
                     {props.items.map((item, indexArray) => (
                         <tr key={indexArray}>
-                            <td>{item.vechime}</td>
-                            <td>{item.nume}</td>
-                            <td>{item.salariu}</td>
-                            <td>{item.functie}</td>
-                            <td>{item.echipa}</td>
-                            <td>{item.telefon}</td>
+                            <td>{item.age}</td>
+                            <td>{item.name}</td>
+                            <td>{item.salary}</td>
+                            <td>{item.position}</td>
+                            <td>{item.team}</td>
+                            <td>{item.phone}</td>
                             <td>{item.email}</td>
-                            <td>{item.impozit === true ? "Da" : "Nu"}</td>
+                            <td>{item.paysTax === true ? "Yes" : "No"}</td>
                         </tr>
                     ))}
                 </tbody>

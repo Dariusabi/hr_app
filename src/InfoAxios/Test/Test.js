@@ -1,25 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import axios from 'axios';
 
 import classes from './Test.module.css';
 
 function Test() {
-
-    // const scope = {
-    //     userId: '',
-    //     title: '',
-    //     body: ''
-    // };
-
-    const [info, setInfo] = useState('');
-
-
-
-    const changeHandler = (event) => {
-        const { name, value } = event.target;
-        setInfo({ [name]: value });
-    };
 
     const getHandler = () => {
 
@@ -36,7 +21,7 @@ function Test() {
 
         axios.post('https://jsonplaceholder.typicode.com/posts', {
             userId: 8,
-            title: "uihiu"
+            title: "test"
         })
             .then((response) => {
                 console.log(response.data);
@@ -68,21 +53,9 @@ function Test() {
             })
     };
 
-    // const { userId, title, body } = scope;
 
     return (
         <div className={classes.submit}>
-            {/* <form onSubmit={submitHandler} >
-                <div>
-                    <input type="text" name="userId" onChange={changeHandler} />
-                </div>
-                <div>
-                    <input type="text" name="title" onChange={changeHandler} />
-                </div>
-                <div>
-                    <input type="text" name="body" onChange={changeHandler} />
-                </div>  
-            </form> */}
             <div className={classes.test_console} >
                 <button type="submit" onClick={getHandler} >Submit</button>
                 <button type="submit" onClick={postHandler} >Submit</button>

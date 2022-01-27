@@ -41,7 +41,7 @@ const InfoAxios = () => {
                             <td>{item.team}</td>
                             <td>{item.phone}</td>
                             <td>{item.email}</td>
-                            <td>{item.paysTax === true ? "Da" : "Nu"}</td>
+                            <td>{item.paysTax === true ? "Yes" : "No"}</td>
                         </tr>
                     ))}
                 </tbody>

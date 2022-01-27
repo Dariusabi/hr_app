@@ -11,17 +11,17 @@ const Combobox = (props) => {
     const employeeChangeHandler = (event) => {
         const employee = props.items.find(x => x._id === event.target.value);
         setCurrentEmployee(employee);
-        console.log(employee.salary);
+        
         props.salaryHandler(employee.salary);
     };
-
+    
 
     const addChangedSalary = (event) => {
         setAddSalary(event.target.value);
     };
 
     const updateSalary = () => {
-        axios.put('http://localhost:3000/api/details/' + 'employee._id', {
+        axios.put(`http://localhost:3000/api/details/${currentEmployee._id}`, {
             "name": currentEmployee.name,
             "_id": currentEmployee._id,
             "email": currentEmployee.email,
@@ -44,7 +44,7 @@ const Combobox = (props) => {
         <div className={classes.combobox}>
             <form onSubmit={submitHandler} className={classes.salariati}>
                 <div>
-                    <label>Angajati</label>
+                    <label>Employees</label>
                     <select name="angajati" onChange={employeeChangeHandler} >
                         {props.items.map((item, indexArray) => (
                             <option key={indexArray} value={item._id} >{item.name.firstName} {item.name.surname} </option>
@@ -52,14 +52,11 @@ const Combobox = (props) => {
                     </select>
                     <br />
                     <br />
-                    {/* <label>Salariu</label>
-            <input value={salary} /> */}
-                    {/* <button onSubmit={postData} >Submit</button> */}
-                    <label>Noul salariu</label>
+                    <label>New salary</label>
                     <input type="number" onChange={addChangedSalary} />
                     <br />
                     <br />
-                    <button type="submit" onClick={updateSalary} >Modifica salariu angajat</button>
+                    <button type="submit" onClick={updateSalary} >Change employee salary</button>
                 </div>
             </form>
         </div>

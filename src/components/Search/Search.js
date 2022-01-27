@@ -7,7 +7,7 @@ function Search(props) {
         <div className={classes.search}>
             <label>
                 <input type="text" onChange={props.onChange} value={props.value} />
-                <button>Cauta</button>
+                <button>Search</button>
             </label>
         </div>
     )

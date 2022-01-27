@@ -8,28 +8,28 @@ function FormulaBrut(props) {
             <table classes={classes.brut}>
                 <thead>
                     <tr>
-                        <th>Calculator Salariu</th>
+                        <th>Salary Calculator</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Asigurari Sociale</td>
+                        <td>Social Security</td>
                         <td>25%</td>
                         <td> {props.cas} </td>
                     </tr>
                     <tr>
-                        <td>Asigurari sociale de Sanatate</td>
+                        <td>Social Health Insurance</td>
                         <td>10%</td>
                         <td> {props.cass} </td>
                     </tr>
                     <tr>
-                        <td>Impozitul pe venit</td>
+                        <td>Tax</td>
                         <td>{props.impozitBrut}</td>
                         <td> {props.impozit} </td>
                     </tr>
                     <tr>
-                        <td>Salariu Net</td>
+                        <td>Net Salary</td>
                         <td></td>
                         <td>{props.total}</td>
                     </tr>

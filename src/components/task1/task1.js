@@ -7,15 +7,15 @@ import Search from '../Search/Search';
 const Insert = () => {
 
     const initialState = {
-        vechime: "",
-        nume: "",
-        salariu: "",
-        functie: "",
-        echipa: "",
-        telefon: "",
+        age: "",
+        name: "",
+        salary: "",
+        position: "Tester",
+        team: "",
+        phone: "",
         email: "",
-        impozit: false
-    }
+        paysTax: false
+    };
 
     const [employee, setEmployee] = useState(initialState);
 
@@ -25,25 +25,25 @@ const Insert = () => {
         setEmployee({
             ...employee,
             [name]: value,
-            impozit: checked
+            paysTax: checked
         });
-        console.log(employee);
+        // console.log(employee);
     };
 
     const [employeeList, setEmployeeList] = useState([]);
 
     const submitHandler = (event) => {
         event.preventDefault();
-        if (employee.vechime.trim().length < 1 || 
-            employee.nume.trim().length < 1 ||
-            employee.salariu.trim().length < 1 ||
-            employee.functie.trim().length < 1 ||
-            employee.echipa.trim().length < 1 ||
-            employee.telefon.trim().length < 1 ||
+        if (employee.age.trim().length < 1 || 
+            employee.name.trim().length < 1 ||
+            employee.salary.trim().length < 1 ||
+            employee.position.trim().length < 1 ||
+            employee.team.trim().length < 1 ||
+            employee.phone.trim().length < 1 ||
             employee.email.trim().length < 1) {
-            return alert("Completeaza toate campurile!")
+            return alert("Fill in all the fields!")
         } else {
-            setEmployeeList([...employeeList, employee])};
+            setEmployeeList([employee, ...employeeList])};
         setEmployee(initialState);
     };
 
@@ -54,25 +54,17 @@ const Insert = () => {
     };
 
 
-    // const confirmHandler = (event) => {
-    //     const { checked } = event.target; 
-    //     setEmployee({
-    //         ...employee,
-    //         impozit: checked});
-        
-    //     console.log(employee);
-    // };
 
     return (
         <div className={classes.dataForm}>
             <form onSubmit={submitHandler} className={classes.form} >
                 <div className={classes.task1}>
-                    <label className={classes.idem}>Ani vechime</label>
+                    <label className={classes.idem}>Age</label>
                     <div>
                         <input
                             type="text"
-                            name="vechime"
-                            value={employee.vechime}
+                            name="age"
+                            value={employee.age}
                             onChange={inputChangeHandler}
                             className={classes.dataInput}
                         />
@@ -80,12 +72,12 @@ const Insert = () => {
                     </div>
                 </div>
                 <div className={classes.task1}>
-                    <label className={classes.idem}>Nume</label>
+                    <label className={classes.idem}>Name</label>
                     <div>
                         <input
                             type="text"
-                            name="nume"
-                            value={employee.nume}
+                            name="name"
+                            value={employee.name}
                             onChange={inputChangeHandler}
                             className={classes.dataInput}
                         />
@@ -93,12 +85,12 @@ const Insert = () => {
                     </div>
                 </div>
                 <div className={classes.task1}>
-                    <label className={classes.idem}>Salariu</label>
+                    <label className={classes.idem}>Salary</label>
                     <div>
                         <input
                             type="number"
-                            name="salariu"
-                            value={employee.salariu}
+                            name="salary"
+                            value={employee.salary}
                             onChange={inputChangeHandler}
                             className={classes.dataInput}
                         />
@@ -106,12 +98,12 @@ const Insert = () => {
                     </div>
                 </div>
                 <div className={classes.task1}>
-                    <label className={classes.idem}>Functie</label>
+                    <label className={classes.idem}>Position</label>
                     <div>
                         <input
                             type="text"
-                            name="functie"
-                            value={employee.functie}
+                            name="position"
+                            value={employee.position}
                             onChange={inputChangeHandler}
                             className={classes.dataInput}
                         />
@@ -119,12 +111,12 @@ const Insert = () => {
                     </div>
                 </div>
                 <div className={classes.task1}>
-                    <label className={classes.idem}>Echipa</label>
+                    <label className={classes.idem}>Team</label>
                     <div>
                         <input
                             type="text"
-                            name="echipa"
-                            value={employee.echipa}
+                            name="team"
+                            value={employee.team}
                             onChange={inputChangeHandler}
                             className={classes.dataInput}
                         />
@@ -132,12 +124,12 @@ const Insert = () => {
                     </div>
                 </div>
                 <div className={classes.task1}>
-                    <label className={classes.idem}>Telefon</label>
+                    <label className={classes.idem}>Phone</label>
                     <div>
                         <input
                             type="text"
-                            name="telefon"
-                            value={employee.telefon}
+                            name="phone"
+                            value={employee.phone}
                             onChange={inputChangeHandler}
                             className={classes.dataInput}
                         />
@@ -158,16 +150,16 @@ const Insert = () => {
                     </div>
                 </div>
                 <div>
-                    <label className={classes.idem}>Scutit de impozit</label>
-                    <input type="checkbox" onChange={inputChangeHandler}  />
+                    <label className={classes.idem}>No tax</label>
+                    <input type="checkbox" onChange={inputChangeHandler} checked="true" />
                 </div>
 
                 <p>
                     <img src="red_star.png" alt="star" width="8" height="8" className={classes.imag} />
-                    Toate campurile sunt obligatorii
+                    All fields are required
                 </p>
 
-                <button type="submit">Adauga angajat</button>
+                <button type="submit">Add employee</button>
             </form>
             <div className={classes.value}>
                 <Result
@@ -175,7 +167,7 @@ const Insert = () => {
                         if (valueSearch === "") {
                             return val;
                         }
-                        else if (val.nume.toLowerCase().includes(valueSearch.toLowerCase())) {
+                        else if (val.name.toLowerCase().includes(valueSearch.toLowerCase())) {
                             return val;
                         }
                     })}

@@ -25,10 +25,10 @@ function Calculator() {
 
     const [check, setCheck] = useState(false);
     const [checkIt, setCheckIt] = useState(false);
-    const [salariu, setSalariu] = useState('');
+    const [salary, setSalary] = useState('');
 
     const salaryInputHandler = (event) => {
-        setSalariu(event);
+        setSalary(event);
     };
 
     const checkHandler = (event) => {
@@ -55,10 +55,10 @@ function Calculator() {
         brut = "0%";
     };
 
-    let cas = Math.round(salariu * "0.25");
-    let cass = Math.round(salariu * "0.1");
-    let impozit = (!checkIt ? Math.round((salariu - cas - cass) * "0.1") : 0);
-    let salariuBrut = (Math.round(salariu - (cas + cass + impozit)));
+    let cas = Math.round(salary * "0.25");
+    let cass = Math.round(salary * "0.1");
+    let impozit = (!checkIt ? Math.round((salary - cas - cass) * "0.1") : 0);
+    let salariuBrut = (Math.round(salary - (cas + cass + impozit)));
 
 
     return (
@@ -68,7 +68,7 @@ function Calculator() {
                 onChange={checkHandler}
                 onSkip={checkSkip}
                 onSubmit={submitHandler}
-                val={salariu}
+                val={salary}
                 files={personsList}
             />
 
@@ -81,7 +81,7 @@ function Calculator() {
                     total={salariuBrut}
                 /> :
                 <FormulaNet
-                    salariuBrut={Math.round(salariu / content)}
+                    salariuBrut={Math.round(salary / content)}
                 />
             }
 
