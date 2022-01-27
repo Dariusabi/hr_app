@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/hr_app/static/css/main.3775b84d.chunk.css",
+    "main.js": "/hr_app/static/js/main.ecb03c01.chunk.js",
+    "main.js.map": "/hr_app/static/js/main.ecb03c01.chunk.js.map",
+    "runtime-main.js": "/hr_app/static/js/runtime-main.62a39c9e.js",
+    "runtime-main.js.map": "/hr_app/static/js/runtime-main.62a39c9e.js.map",
+    "static/js/2.68ccad27.chunk.js": "/hr_app/static/js/2.68ccad27.chunk.js",
+    "static/js/2.68ccad27.chunk.js.map": "/hr_app/static/js/2.68ccad27.chunk.js.map",
+    "index.html": "/hr_app/index.html",
+    "static/css/main.3775b84d.chunk.css.map": "/hr_app/static/css/main.3775b84d.chunk.css.map",
+    "static/js/2.68ccad27.chunk.js.LICENSE.txt": "/hr_app/static/js/2.68ccad27.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.62a39c9e.js",
+    "static/js/2.68ccad27.chunk.js",
+    "static/css/main.3775b84d.chunk.css",
+    "static/js/main.ecb03c01.chunk.js"
+  ]
+}
